@@ -10,6 +10,10 @@
     </div>
     <h4><%= @post.title%></h4>
     <p><%= @post.text%></p>
+     <%= form_with model: @new_like, url: user_post_likes_path(post_id: @post.id)  do |form|  %>
+        <%= form.submit "Add like 👍"  %>
+      <% end %>
+    <%= link_to "Add comment 💬" ,new_user_post_comment_path(user_id: @post.user_id, post_id: @post.id ) %> 
   </div>
   <ul class="comments">
     Comments:

@@ -1,0 +1,6 @@
+<h1> Add form for comments</h1>
+<%= form_with  model: @new_comment  ,url: user_post_comments_path do |f|%>
+<%= f.label :add_comment%>
+<%= f.text_field :text%>
+<%= f.submit "Comment" %>
+<%end %>
