@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'GET #index' do
     before(:each) do
-      get '/users/10/posts'
+      get user_posts_path
     end
 
     it 'GET requests response status was correct' do
