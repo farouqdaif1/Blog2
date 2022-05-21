@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   before(:each) do
-  @user = User.create(name: 'farouq', photo: 'imagelink', bio: 'software enginner')
-  @post = Post.create(user: @user, title: 'asd title', text: 'My hello')
-end
+    @user = User.create(name: 'farouq', photo: 'imagelink', bio: 'software enginner')
+    @post = Post.create(user: @user, title: 'asd title', text: 'My hello')
+  end
 
   subject { Post.new(title: 'Farouq Daif', text: 'link', comments_counter: 12, likes_counter: 10, user: @user) }
   before { subject.save }
