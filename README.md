@@ -15,8 +15,8 @@
 To get a local copy up and running follow these simple steps.
 
 ```bash
-$ git clone https://github.com/farouqdaif1/blogapp.git
-$ cd blogapp
+$ git clone https://github.com/farouqdaif1/Blog2.git
+$ cd Blog2
 $ bundle install 
 ```
 
