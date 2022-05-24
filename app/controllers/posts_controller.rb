@@ -28,6 +28,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    deleted_post = Post.find(params[:id])
+    user = User.find(deleted_post.user_id)
+    user.posts_counter -= 1
+    deleted_post.destroy
+    if user.save
+      redirect_to user_path(params[:user_id]), notice: 'You have deleted this post successfully!'
+    else
+      render :new, alert: 'An error has occurred while deleting the post'
+    end
+  end
+
   private
 
   def post_params

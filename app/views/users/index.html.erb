@@ -1,8 +1,10 @@
 <h1>List of users</h1>
     <% @users.each do |user| %>
+
     <section class="users">
         <img src= "<%= user.photo %>" alt='User Avatar' style="width:20%"/>
         <h2> <%= user.name%></h2>
         <span> Number of posts: <%= user.posts_counter || 0%></span>
     </section>
+    <%= link_to "Show ", user_path(user.id) %>
 <% end%>
