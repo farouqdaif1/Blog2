@@ -1,17 +1,17 @@
 <h1>user Datiles</h1>
 <section class='user'>
-<img src="<%= current_user.photo%>" alt= 'User Aveter' style="width:20%">
-<h2><%= current_user.name%></h2>
-<p> Number of posts: <%= current_user.posts_counter || 0  %></p>
+<img src="<%= @user.photo%>" alt= 'User Aveter' style="width:20%">
+<h2><%= @user.name%></h2>
+<p> Number of posts: <%= @user.posts_counter || 0  %></p>
 <div>
 <h3>Bio</h3>
-<p><%= current_user.bio%><p>
+<p><%= @user.bio%><p>
 </div>
 <div class = 'recent-posts'>
- <% current_user.most_recent_posts.each_with_index do |post,index| %>
+ <% @user.most_recent_posts.each_with_index do |post,index| %>
     <h3>post#<%=index+1%><h3>
     <p><%= post.text %></p>
  <% end%>
 </div>
-<a href="<%= current_user.id%>/posts">See all posts</a>
+<a href="<%= @user.id%>/posts">See all posts</a>
 </section>

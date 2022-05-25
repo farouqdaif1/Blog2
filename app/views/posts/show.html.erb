@@ -14,11 +14,18 @@
         <%= form.submit "Add like 👍"  %>
       <% end %>
     <%= link_to "Add comment 💬" ,new_user_post_comment_path(user_id: @post.user_id, post_id: @post.id ) %> 
+        <% if can? :destory, @post%>
+        <%= button_to "Delete 🗑️", user_post_path(user_id:@post.user_id,id: @post.id) ,method: :delete, class: "react-btn" %>
+      <% end %>
+
   </div>
   <ul class="comments">
     Comments:
     <% @comments.includes(:user).each do |comment|%>
       <li><%= comment.user.name %> : <%= comment.text %></li>
+           <% if can? :destory, comment%>
+            <%= button_to "Delete 🗑️", user_post_comment_path(user_id:comment.user_id,post_id: comment.post_id,id:comment.id) ,method: :delete %>
+          <% end %>
     <% end %>
   </ul>
 </section
