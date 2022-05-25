@@ -6,7 +6,7 @@ RSpec.describe 'User index page', type: :feature do
                         password: 'password', confirmed_at: Time.now)
     @post = Post.create(user: @user, title: 'My title', text: 'My text')
     @like = Like.create(user: @user, post_id: @post.id)
-    @post. updates_posts_counter
+    @post.updates_posts_counter
     visit new_user_session_path
     fill_in 'Email', with: 'test@email.com'
     fill_in 'Password', with: 'password'
@@ -24,7 +24,5 @@ RSpec.describe 'User index page', type: :feature do
     it 'number of posts of the user' do
       expect(page).to have_content 'Number of posts: 1'
     end
-
-
   end
 end

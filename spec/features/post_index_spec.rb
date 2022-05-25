@@ -20,7 +20,6 @@ RSpec.describe 'Post index page', type: :feature do
     visit user_posts_path @user.id
   end
   describe 'tests for view posts#index' do
-
     it 'name of user.' do
       expect(page).to have_content 'farouq'
     end
