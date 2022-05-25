@@ -6,14 +6,13 @@ RSpec.describe 'User index page', type: :feature do
                         password: 'password', confirmed_at: Time.now)
     @post = Post.create(user: @user, title: 'My title', text: 'My text')
     @like = Like.create(user: @user, post_id: @post.id)
-    @post. updates_posts_counter
+    @post.updates_posts_counter
     visit new_user_session_path
     fill_in 'Email', with: 'test@email.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
   end
   describe 'tests for view users#index' do
-    
     it 'Can see the name of user' do
       expect(page).to have_content 'farouq'
     end
