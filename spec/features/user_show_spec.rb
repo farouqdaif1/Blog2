@@ -33,6 +33,13 @@ RSpec.describe 'User show page', type: :feature do
       expect(page).to have_content 'Developer from Egypt'
     end
 
+    it 'see the users first 3 posts' do
+      expect(page).to have_content 'This is my 5 post!'
+      expect(page).to have_content 'This is my 4 post!'
+      expect(page).to have_content 'This is my 3 post!'
+      expect(page).to have_no_content 'This is my 2 post!'
+    end
+
     it 'can see a button that lets me view all of a users posts.' do
       expect(page.find('a', text: 'See all posts')).to have_content 'See all posts'
     end

@@ -20,6 +20,9 @@ RSpec.describe 'Post index page', type: :feature do
     visit user_posts_path @user.id
   end
   describe 'tests for view posts#index' do
+    it 'I can see the users profile picture.' do
+      expect(page.find('img')['src']).to have_content @user.photo
+    end
     it 'name of user.' do
       expect(page).to have_content 'farouq'
     end
@@ -46,6 +49,10 @@ RSpec.describe 'Post index page', type: :feature do
 
     it 'see how many likes a post has' do
       expect(page).to have_content 'Likes: 1'
+    end
+
+    it 'see the first post on a post' do
+      expect(page).to have_content 'Post#1'
     end
 
     it 'When I click a user post, it redirects me to that post s show page.' do
